@@ -1,0 +1,22 @@
+{
+  "name": "week6codingassignment",
+  "version": "1.0.0",
+  "description": "mocha",
+  "main": "scipt.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erinelise2/week6codingassignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erinelise2/week6codingassignment/issues"
+  },
+  "homepage": "https://github.com/erinelise2/week6codingassignment#readme",
+  "dependencies": {
+    "chai": "^4.3.7"
+  }
+}
