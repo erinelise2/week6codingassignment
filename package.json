@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/erinelise2/week6codingassignment#readme",
   "dependencies": {
-    "chai": "^4.3.7"
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
   }
 }
