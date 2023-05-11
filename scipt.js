@@ -42,9 +42,9 @@ class Deck { //building the deck using the created card class parameters
         }
     }
 // random cards... so, a shuffling method to deal them out to the two players
-// Math codes: .random is random number between 0 and 1. .floor returns largest integer less than or equal to x.
+// Math codes from mozilla: .random is random number between 0 and 1. .floor returns largest integer less than or equal to x.
 // .random ex: num = Math.floor(Math.random() * (max - min + 1)) + min;
-// .max return larges of zero or more numbers. .min returns smallest of zero or more numbers
+// .max return largest of zero or more numbers. .min returns smallest of zero or more numbers
 
        shuffleDeck() {
         for (let i = this.deck.length - 1; i > 0; i--) {
@@ -84,7 +84,7 @@ class TimeToPlay {
         this.gameDeck.shuffleDeck();
         this.gameDeck.dealDeck();
     }
-    dealHands() { // this will push the arrays from the splitting of the deck in the deal method to each player.
+    dealCards() { // this will push the arrays from the splitting of the deck in the deal method to each player.
         for (let i = 0; i < 26; i++) {
             this.player1.hand.push(this.gameDeck.playerDeck1[i]);
         }
@@ -92,13 +92,13 @@ class TimeToPlay {
             this.player2.hand.push(this.gameDeck.playerDeck2[i]);
         }
         console.log(this.player1.hand);
-        console.log(this.player2. hand); // logging their hands to see the arrays of 26 different cards each
+        console.log(this.player2.hand); // logging their hands to see the arrays of 26 different cards each
     } 
 // For each round, each player will play a card.
 // Cards need to be compared to see the highest value/winner. Print the name and card each time.
     compareCards () {
         for (let round = 0; round < 26; round ++) {
-            console.log("Game Round: ", round);
+            console.log('Game Round: ', round);
             console.log(`${this.player1.name}: ${this.player1.hand[round].faceValue} of ${this.player1.hand[round].suit}`);
             console.log(`${this.player2.name}: ${this.player2.hand[round].faceValue} of ${this.player2.hand[round].suit}`);
 
@@ -106,21 +106,18 @@ class TimeToPlay {
                 this.player1.score++;
                 console.log(`${this.player1.name} score: ${this.player1.score}`);
                 console.log(`${this.player2.name} score: ${this.player2.score}`);
-                console.log(`${this.player1.name} won this round!
-                `)
+                console.log(`${this.player1.name} won this round!`)
             } else if (this.player2.hand[round].rank > this.player1.hand[round].rank) {
                 this.player2.score++;
                 console.log(`${this.player1.name} score: ${this.player1.score}`);
                 console.log(`${this.player2.name} score: ${this.player2.score}`);
-                console.log(`${this.player2.name} won this round!
-                `)
+                console.log(`${this.player2.name} won this round!`)
             } else {
                 console.log(`${this.player1.name} score: ${this.player1.score}`);
                 console.log(`${this.player2.name} score: ${this.player2.score}`);
-                console.log(`This Round is a Tie
-                `);
+                console.log(`This Round is a Tie`);
              }
-        }
+        } console.log("-----------"); // added this in after to seperate the game play from who wins.
     }
 // The cards are dealt and scores are incremented... have to set a method to determine the winner
 // Compare and print out the winner if one is greater than the other...
@@ -148,7 +145,7 @@ class TimeToPlay {
 let thisWarGame = new TimeToPlay();
 thisWarGame.startGame(); // method on top of object. Calls the game to begin
 
-thisWarGame.dealHands(); // deals out the hands for each player
+thisWarGame.dealCards(); // deals out the hands for each player
 
 thisWarGame.compareCards(); // compares cards by ranked value
 
