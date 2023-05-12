@@ -42,9 +42,9 @@ class Deck { //building the deck using the created card class parameters
         }
     }
 // random cards... so, a shuffling method to deal them out to the two players
-// Math codes from mozilla: .random is random number between 0 and 1. .floor returns largest integer less than or equal to x.
+// Math codes from mozilla: .random is random number. .floor returns largest integer less than or equal to x.
 // .random ex: num = Math.floor(Math.random() * (max - min + 1)) + min;
-// .max return largest of zero or more numbers. .min returns smallest of zero or more numbers
+// other possibly helpful things: .max return largest of zero or more numbers. .min returns smallest of zero or more numbers
 
        shuffleDeck() {
         for (let i = this.deck.length - 1; i > 0; i--) {
